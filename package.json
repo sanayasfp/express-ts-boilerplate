@@ -1,0 +1,43 @@
+{
+  "name": "express-ts-boilerplate",
+  "version": "1.0.0",
+  "description": "A boilerplate for Express.js with TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec tsx src/index.ts --watch . --ignore prisma, node_modules, dist"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "boilerplate",
+    "starter",
+    "template",
+    "nodejs",
+    "backend",
+    "api",
+    "rest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.2.0",
+    "express-session": "^1.18.0",
+    "helmet": "^7.1.0",
+    "multer": "^1.4.5-lts.1",
+    "tslog": "^4.9.2",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/express-session": "^1.18.0",
+    "@types/multer": "^1.4.11",
+    "typescript": "^5.4.5",
+    "tsx": "^4.11.0",
+    "nodemon": "^3.1.1"
+  }
+}
