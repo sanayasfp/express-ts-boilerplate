@@ -1,16 +1,16 @@
 import dotenv from 'dotenv';
+import dotenvExpand from 'dotenv-expand';
 import {IEnv, EnvVariable} from '@/types/envTypes';
 
-console.log(`Loading environment variables for ${process.env.NODE_ENV}`);
+dotenvExpand.expand(dotenv.config({path: `.env.${process.env.NODE_ENV || 'development'}`}));
 
-dotenv.config({path: `.env.${process.env.NODE_ENV || 'development'}`});
 
 export class Env {
   private readonly _variables = process.env as NodeJS.ProcessEnv & IEnv;
 
   constructor(defaultValues?: Partial<IEnv>) {
     if (defaultValues) {
-      this._variables = { ...defaultValues, ...this._variables };
+      this._variables = {...defaultValues, ...this._variables};
     }
 
     Object.assign(this, this._variables);
